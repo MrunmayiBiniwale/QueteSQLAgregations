@@ -78,7 +78,7 @@ INSERT INTO ACHAT (ProductId, DateDAchat) VALUES (7, '2024-12-03');
 INSERT INTO ACHAT (ProductId, DateDAchat) VALUES (8, '2024-04-03');
 INSERT INTO ACHAT (ProductId, DateDAchat) VALUES (9, '1999-02-17');
 
-
+--La somme du nombre d'achats de chaque catégorie
 SELECT 
 C.CategorieName,
 Count(A.AchatId) AS 'Nombre d''Achat'
@@ -88,6 +88,7 @@ JOIN Categorie C ON P.CategorieId = C.CategorieId
 JOIN Achat A ON P.ProductId = A.AchatId
 GROUP BY C.CategorieName
 
+--La somme des prix des produits achetés de chaque catégorie
 SELECT 
 C.CategorieName,
 SUM(P.Prix) AS 'Somme de Prix'
